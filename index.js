@@ -2,6 +2,7 @@ const Logger = require('./patterns/singleton');
 const CarMaker = require('./patterns/factory');
 const Shipping = require('./patterns/adapter').Shipping;
 const ShippingAdapter = require('./patterns/adapter').ShippingAdapter;
+const Mortgage =  require('./patterns/facade');
 
 //Singleton
 let logger1 = new Logger();
@@ -30,8 +31,14 @@ let adapter = new ShippingAdapter(credentials);
 
 let cost = shipping.request("78701", "10010", "2 lbs");
 
-console.log("Old cost: " + cost);
+logger1.log("Old cost: " + cost);
 
 cost = adapter.request("78701", "10010", "2 lbs");
 
-console.log("New cost: " + cost);
+logger1.log("New cost: " + cost);
+
+//Façade
+let mortgage = new Mortgage("Joan Templeton");
+let result = mortgage.applyFor("$100,000");
+
+logger2.log(result);
