@@ -1,11 +1,11 @@
-const Logger = require('./patterns/singleton');
-const CarMaker = require('./patterns/factory');
-const Shipping = require('./patterns/adapter').Shipping;
-const ShippingAdapter = require('./patterns/adapter').ShippingAdapter;
-const Mortgage =  require('./patterns/facade');
-const Iterator = require('./patterns/iterator');
-const VendorFactory = require('./patterns/abstract-factory').VendorFactory;
-const EmployeeFactory = require('./patterns/abstract-factory').EmployeeFactory;
+const Logger = require('./patterns/creational/singleton');
+const CarMaker = require('./patterns/creational/factory');
+const Shipping = require('./patterns/structural/adapter').Shipping;
+const ShippingAdapter = require('./patterns/structural/adapter').ShippingAdapter;
+const Mortgage =  require('./patterns/structural/facade');
+const Iterator = require('./patterns/structural/iterator');
+const VendorFactory = require('./patterns/creational/abstract-factory').VendorFactory;
+const EmployeeFactory = require('./patterns/creational/abstract-factory').EmployeeFactory;
 
 //Singleton
 let logger1 = new Logger();
