@@ -4,6 +4,8 @@ const Shipping = require('./patterns/adapter').Shipping;
 const ShippingAdapter = require('./patterns/adapter').ShippingAdapter;
 const Mortgage =  require('./patterns/facade');
 const Iterator = require('./patterns/iterator');
+const VendorFactory = require('./patterns/abstract-factory').VendorFactory;
+const EmployeeFactory = require('./patterns/abstract-factory').EmployeeFactory;
 
 //Singleton
 let logger1 = new Logger();
@@ -55,3 +57,15 @@ for (var item = it.first(); it.hasNext(); item = it.next()) {
 it.each((item) => {
     logger2.log(item + '2');
 });
+
+//Abstract Factory
+let persons = [];
+
+persons.push(EmployeeFactory.create("Joan DiSilva"));
+persons.push(EmployeeFactory.create("Tim O'Neill"));
+persons.push(VendorFactory.create("Gerald Watson"));
+persons.push(VendorFactory.create("Nicole McNight"));
+
+let itPerson = new Iterator(persons);
+
+itPerson.each(person => person.say());
