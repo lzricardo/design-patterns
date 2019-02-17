@@ -3,6 +3,7 @@ const CarMaker = require('./patterns/factory');
 const Shipping = require('./patterns/adapter').Shipping;
 const ShippingAdapter = require('./patterns/adapter').ShippingAdapter;
 const Mortgage =  require('./patterns/facade');
+const Iterator = require('./patterns/iterator');
 
 //Singleton
 let logger1 = new Logger();
@@ -42,3 +43,15 @@ let mortgage = new Mortgage("Joan Templeton");
 let result = mortgage.applyFor("$100,000");
 
 logger2.log(result);
+
+//Iterator
+let items = ["one", 2, "circle", true, "Applepie"];
+let it = new Iterator(items);
+
+for (var item = it.first(); it.hasNext(); item = it.next()) {
+    logger1.log(item);
+}
+
+it.each((item) => {
+    logger2.log(item + '2');
+});
