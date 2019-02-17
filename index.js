@@ -3,7 +3,7 @@ const CarMaker = require('./patterns/creational/factory');
 const Shipping = require('./patterns/structural/adapter').Shipping;
 const ShippingAdapter = require('./patterns/structural/adapter').ShippingAdapter;
 const Mortgage =  require('./patterns/structural/facade');
-const Iterator = require('./patterns/structural/iterator');
+const Iterator = require('./patterns/behavioral/iterator');
 const VendorFactory = require('./patterns/creational/abstract-factory').VendorFactory;
 const EmployeeFactory = require('./patterns/creational/abstract-factory').EmployeeFactory;
 
